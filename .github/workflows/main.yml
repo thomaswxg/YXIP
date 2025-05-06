@@ -33,7 +33,7 @@ jobs:
         git config --global user.name "tianshipapa"
         
         # 更新 git 远程地址，使用 GitHub Token 进行认证
-        git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git
+        git remote set-url origin https://github.com/settings/personal-access-tokens:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git
         
         # 如果有更改，则提交并推送
         if [ -n "$(git status --porcelain)" ]; then
